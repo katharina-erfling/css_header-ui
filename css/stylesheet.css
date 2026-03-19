@@ -1,0 +1,623 @@
+@charset "UTF-8";
+
+
+/* -------------- */
+/* Webfonts */
+/* -------------- */
+
+@font-face {
+    font-family: 'Rounded Mplus 1c';
+    src: url('../webfonts/RoundedMplus1c-Regular.woff2') format('woff2'),
+         url('../webfonts/RoundedMplus1c-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rounded Mplus 1c';
+    src: url('../webfonts/RoundedMplus1c-Medium.woff2') format('woff2'),
+         url('../webfonts/RoundedMplus1c-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rounded Mplus 1c';
+    src: url('../webfonts/RoundedMplus1c-Bold.woff2') format('woff2'),
+         url('../webfonts/RoundedMplus1c-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../webfonts/PTSans-CaptionBold.woff2') format('woff2'),
+         url('../webfonts/PTSans-CaptionBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* -------------- */
+/* Variablen */
+/* -------------- */
+
+:root {
+    --color-primary: #CD6F9E;
+    --color-primary-dark: #9F4D77;
+    --color-secondary: #62BCDA;
+    --color-secondary-dark: #3b778b;
+    --color-tertiary: #553FA6;
+    --color-tertiary-dark: #23104F;
+    --color-neutral-light: white;
+    --color-neutral-dark: rgb(34, 34, 34);
+
+    --font-family-body: 'Rounded Mplus 1c', sans-serif;
+    --font-family-headings: 'PT Sans Caption', sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-s: 0.875rem;
+    --font-size-m: 1rem;
+    --font-size-l: 1.25rem;
+    --font-size-xl: 1.65rem;
+
+    --font-h1-size: clamp(2rem, 5vw, 3rem);
+    --font-h2-size: var(--font-size-xl);
+    --font-h4-size: var(--font-size-m);
+
+    --spacing-xs: 0.25rem;
+    --spacing-s: 0.5rem;
+    --spacing-m: 1rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 4rem;
+
+    --border-radius-cards: 15px;
+    --border-radius-cta: 25px;
+    --border-cards: 1px solid var(--color-neutral-light);
+    --border-hr: 2px solid var(--color-primary);
+    --transition-base: 0.3s ease;
+}
+
+
+/* -------------- */
+/* Basiseinstellungen */
+/* -------------- */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+header, section, main, nav, aside, footer, figure, figcaption {
+    display: block;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-tertiary-dark); /* kein weißer Rand wenn header endet */
+    color: var(--color-neutral-dark);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-m);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+}
+
+h1 {
+    font-size: var(--font-h1-size);
+    font-weight: bold;
+}
+
+
+/* -------------- */
+/* Navigation */
+/* -------------- */
+
+nav {
+    background-color: var(--color-neutral-light);
+    padding: var(--spacing-l) var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-l);
+    position: sticky;
+    top: 0;
+    z-index: 600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+}
+
+img[alt="Logo"] {
+    width: 200px;
+    height: auto;
+}
+
+/* Nav Button */
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    color: var(--color-neutral-dark);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s) var(--spacing-m);
+    border-radius: var(--border-radius-cards);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.nav-btn:hover {
+    background-color: rgba(85, 63, 166, 0.08);
+    color: var(--color-tertiary);
+}
+
+/* Nav rechts */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-l);
+}
+
+/* Hamburger */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-neutral-dark);
+    padding: var(--spacing-s);
+}
+
+/* CTA Button */
+.btn {
+    border-radius: var(--border-radius-cta);
+    text-transform: uppercase;
+    padding: .8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+.btn-primary {
+    background-color: var(--color-tertiary);
+    color: var(--color-neutral-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-tertiary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* -------------- */
+/* Nav Dropdowns */
+/* -------------- */
+
+.nav-dropdown {
+    border: none;
+    margin: 0;
+    padding: var(--spacing-m);
+    position: fixed;
+    background: var(--color-neutral-light);
+    border-radius: var(--border-radius-cards);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    z-index: 700;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+/* Moderner Pfad: Popover API */
+:popover-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Fallback für ältere Browser ohne Popover API */
+.nav-dropdown.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    padding: var(--spacing-s) var(--spacing-m);
+    border-radius: var(--border-radius-cards);
+    color: var(--color-neutral-dark);
+    font-weight: 500;
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.nav-dropdown a:hover {
+    background-color: rgba(85, 63, 166, 0.08);
+    color: var(--color-tertiary);
+}
+
+.nav-dropdown i {
+    color: var(--color-tertiary);
+    width: 1.2rem;
+    text-align: center;
+}
+
+
+/* -------------- */
+/* Header */
+/* -------------- */
+
+header {
+    padding: 20vh 10vw 8vh;
+    min-height: calc(100vh - 115px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-l);
+    text-align: center;
+    background-image: linear-gradient(124deg, var(--color-primary-dark) 0%, var(--color-tertiary-dark) 100%);
+    background-color: var(--color-tertiary-dark); /* Fallback */
+    color: var(--color-neutral-light);
+}
+
+.header-sub {
+    font-size: var(--font-h2-size);
+    font-weight: 400;
+    font-family: var(--font-family-headings);
+    max-width: 70vw;
+}
+
+hr {
+    width: 40%;
+    border: var(--border-hr);
+}
+
+header h1 {
+    max-width: 70vw;
+}
+
+
+/* -------------- */
+/* Karten */
+/* -------------- */
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-l);
+    width: 100%;
+}
+
+.card {
+    border: var(--border-cards);
+    border-radius: var(--border-radius-cards);
+    width: 130px;
+    height: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: var(--spacing-m);
+    gap: var(--spacing-s);
+    transition: background-color var(--transition-base), transform var(--transition-base);
+    cursor: default;
+}
+
+.card:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+}
+
+/* Icon */
+.card-icon {
+    font-size: 2.75rem;
+}
+
+.card:nth-child(odd) .card-icon {
+    color: var(--color-primary);
+}
+
+.card:nth-child(even) .card-icon {
+    color: var(--color-secondary);
+}
+
+.card h4 {
+    font-size: var(--font-h4-size);
+    color: var(--color-neutral-light);
+}
+
+/* Plus-Button oben links */
+.card-info-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: var(--border-cards);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neutral-light);
+    font-size: 0.65rem;
+    transition: background-color var(--transition-base);
+    /* Immer klickbar – kein z-index Stress */
+}
+
+.card-info-btn:hover {
+    background-color: rgba(255,255,255,0.25);
+}
+
+
+/* -------------- */
+/* Karten-Tooltips */
+/* -------------- */
+
+.card-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: var(--color-neutral-light);
+    border-radius: var(--border-radius-cards);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    padding: var(--spacing-m) var(--spacing-l);
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.card.is-open .card-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.card-tooltip strong {
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-l);
+    color: var(--color-tertiary);
+}
+
+.card-tooltip p {
+    font-size: var(--font-size-s);
+    color: var(--color-neutral-dark);
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.card-tooltip a {
+    color: var(--color-primary);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    transition: color var(--transition-base);
+}
+
+.card-tooltip a:hover {
+    color: var(--color-primary-dark);
+}
+
+
+/* -------------- */
+/* Reduced Motion */
+/* -------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* -------------- */
+/* Responsive */
+/* -------------- */
+
+@media (min-width: 1280px) {
+    nav, header {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
+
+@media (min-width: 1700px) {
+    nav, header {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+}
+
+/* --- Tablet: bis 900px --- */
+@media (max-width: 900px) {
+    /* Hamburger einblenden, Desktop-Nav verstecken */
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-left > .nav-list,
+    .nav-right {
+        display: none;
+    }
+
+    nav {
+        padding: var(--spacing-m) var(--spacing-l);
+        position: sticky;
+        flex-wrap: nowrap;
+    }
+
+    /* Header: volle Breite, kein weißer Rand */
+    header {
+        padding: 8vh var(--spacing-l) 4vh;
+        min-height: 100svh;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
+        max-width: 100%;
+    }
+
+    .header-sub {
+        max-width: 100%;
+        font-size: var(--font-size-l);
+    }
+
+    hr {
+        width: 70%;
+    }
+
+    /* Karten: 3 pro Reihe auf Tablet */
+    .card-list {
+        justify-content: center;
+    }
+
+    .card {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* --- Mobile: bis 600px --- */
+@media (max-width: 600px) {
+    header {
+        padding: 6vh var(--spacing-m) 3vh;
+    }
+
+    /* Karten: 2 pro Reihe */
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-m);
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        height: 120px;
+    }
+
+    /* Tooltip nach rechts klappen wenn Karte am linken Rand */
+    .card-list li:nth-child(odd) .card-tooltip {
+        left: 0;
+        transform: translateY(6px);
+    }
+
+    .card-list li:nth-child(odd).is-open .card-tooltip {
+        transform: translateY(0);
+    }
+}
+
+/* --- Kleines Mobile: bis 380px --- */
+@media (max-width: 380px) {
+    .card-list {
+        grid-template-columns: 1fr; /* eine Spalte */
+        gap: var(--spacing-s);
+        max-width: 220px;
+    }
+
+    .card {
+        height: 100px;
+        width: 100%;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+}
+
+
+/* -------------- */
+/* Mobile Menü */
+/* -------------- */
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-neutral-light);
+    flex-direction: column;
+    gap: var(--spacing-m);
+    padding: var(--spacing-l);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 500;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+}
+
+.mobile-menu ul a {
+    font-size: var(--font-size-l);
+    color: var(--color-neutral-dark);
+    font-weight: 700;
+}
+
+.mobile-menu ul a:hover {
+    color: var(--color-tertiary);
+}
+
+.mobile-menu .btn-primary {
+    width: 100%;
+    justify-content: center;
+}

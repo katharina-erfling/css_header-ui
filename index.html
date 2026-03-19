@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <title>Header UI Prototype</title>
+</head>
+<body>
+
+    <!-- nav START -->
+    <nav>
+        <div class="nav-left">
+            <a href="../../index.html">
+                <img src="img/logoipsum-257.png" alt="Logo">
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <button class="nav-btn" popovertarget="dropdown-products" data-popover="dropdown-products">
+                        Products <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div id="dropdown-products" popover class="nav-dropdown">
+                        <a href="#"><i class="fa-solid fa-box"></i> Product Overview</a>
+                        <a href="#"><i class="fa-solid fa-star"></i> What's New</a>
+                        <a href="#"><i class="fa-solid fa-tag"></i> Pricing Plans</a>
+                        <a href="#"><i class="fa-solid fa-code"></i> API & Integrations</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-btn" popovertarget="dropdown-usecases" data-popover="dropdown-usecases">
+                        Use Cases <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div id="dropdown-usecases" popover class="nav-dropdown">
+                        <a href="#"><i class="fa-solid fa-building"></i> For Enterprises</a>
+                        <a href="#"><i class="fa-solid fa-store"></i> For Small Business</a>
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> For Education</a>
+                        <a href="#"><i class="fa-solid fa-heart"></i> For Nonprofits</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-btn" popovertarget="dropdown-features" data-popover="dropdown-features">
+                        Features <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div id="dropdown-features" popover class="nav-dropdown">
+                        <a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+                        <a href="#"><i class="fa-solid fa-shield"></i> Security</a>
+                        <a href="#"><i class="fa-solid fa-bolt"></i> Performance</a>
+                        <a href="#"><i class="fa-solid fa-puzzle-piece"></i> Plugins</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+            <i class="fa-solid fa-bars fa-2x"></i>
+        </button>
+
+        <div class="nav-right">
+            <ul class="nav-list">
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Mobile Menü – alle Links zusammen -->
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Use Cases</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </nav>
+    <!-- nav END -->
+
+    <!-- header START -->
+    <header>
+        <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+        <p class="header-sub">Lorem ipsum dolor sit amet consectetur, Quasi quibusdam rem</p>
+        <hr>
+
+        <ul class="card-list">
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Ice Cream</strong>
+                    <p>Entdecke unsere Auswahl an frischen Eissorten – von klassisch bis exotisch.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-ice-cream card-icon"></i>
+                <h4>Ice Cream</h4>
+            </li>
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Rice Bowls</strong>
+                    <p>Gesunde und leckere Bowl-Kreationen aus frischen Zutaten.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-bowl-rice card-icon"></i>
+                <h4>Rice Bowl</h4>
+            </li>
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Pizza</strong>
+                    <p>Knusprige Böden mit frischen Belägen – für jeden Geschmack etwas dabei.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-pizza-slice card-icon"></i>
+                <h4>Pizza</h4>
+            </li>
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Cakes</strong>
+                    <p>Handgemachte Torten und Kuchen für jeden Anlass.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-cake-candles card-icon"></i>
+                <h4>Cake</h4>
+            </li>
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Cheese</strong>
+                    <p>Eine kuratierte Auswahl an Käsesorten aus aller Welt.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-cheese card-icon"></i>
+                <h4>Cheese</h4>
+            </li>
+
+            <li class="card">
+                <button class="card-info-btn" aria-label="Mehr Info">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="card-tooltip">
+                    <strong>Burgers</strong>
+                    <p>Saftige Burger mit frischen Zutaten – klassisch oder kreativ.</p>
+                    <a href="#">Mehr erfahren →</a>
+                </div>
+                <i class="fa-solid fa-burger card-icon"></i>
+                <h4>Burger</h4>
+            </li>
+
+        </ul>
+    </header>
+    <!-- header END -->
+
+    <script>
+        // -----------------------------------------------
+        // Hilfsfunktion: Dropdown unter dem Button positionieren
+        // -----------------------------------------------
+        function positionDropdown(btn, dropdown) {
+            const rect = btn.getBoundingClientRect();
+            const ddWidth = dropdown.offsetWidth;
+            const vw = window.innerWidth;
+            let left = rect.left;
+            if (left + ddWidth > vw - 16) left = vw - ddWidth - 16;
+            dropdown.style.top = (rect.bottom + 8) + 'px';
+            dropdown.style.left = left + 'px';
+        }
+
+        // -----------------------------------------------
+        // Feature Detection: Popover API unterstützt?
+        // -----------------------------------------------
+        const supportsPopover = HTMLElement.prototype.hasOwnProperty('popover');
+
+        if (supportsPopover) {
+            // Moderner Pfad: Popover API übernimmt Öffnen/Schließen,
+            // JS nur für Positionierung
+            document.querySelectorAll('.nav-btn[data-popover]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const dd = document.getElementById(btn.dataset.popover);
+                    setTimeout(() => {
+                        if (dd.matches(':popover-open')) positionDropdown(btn, dd);
+                    }, 0);
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('.nav-dropdown:popover-open').forEach(dd => {
+                    const btn = document.querySelector(`[data-popover="${dd.id}"]`);
+                    if (btn) positionDropdown(btn, dd);
+                });
+            });
+
+        } else {
+            // Fallback für ältere Browser: manuelle Toggle-Logik
+            document.querySelectorAll('.nav-btn[data-popover]').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const dd = document.getElementById(btn.dataset.popover);
+                    const isOpen = dd.classList.contains('is-open');
+
+                    // Alle anderen schließen
+                    document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+                        d.classList.remove('is-open');
+                    });
+
+                    if (!isOpen) {
+                        dd.classList.add('is-open');
+                        positionDropdown(btn, dd);
+                    }
+                });
+            });
+
+            // Außen-Klick schließt alle Dropdowns
+            document.addEventListener('click', e => {
+                if (!e.target.closest('.nav-item')) {
+                    document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+                        d.classList.remove('is-open');
+                    });
+                }
+            });
+        }
+
+        // -----------------------------------------------
+        // Karten-Tooltips (funktionieren in allen Browsern)
+        // -----------------------------------------------
+        document.querySelectorAll('.card-info-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const card = btn.closest('.card');
+                const isOpen = card.classList.contains('is-open');
+                document.querySelectorAll('.card.is-open').forEach(c => c.classList.remove('is-open'));
+                if (!isOpen) card.classList.add('is-open');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.card.is-open').forEach(c => c.classList.remove('is-open'));
+        });
+    </script>
+
+</body>
+</html>

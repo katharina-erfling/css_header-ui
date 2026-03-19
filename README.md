@@ -1,4 +1,6 @@
-# 🍔 Header UI Prototype
+<img width="1909" height="894" alt="Screenshot 2026-03-19 085306" src="https://github.com/user-attachments/assets/1ed415d4-7214-4211-8e89-f4b64fc2ac63" />
+# Header UI Prototype
+
 
 Responsiver Header- und Navigations-Prototype mit modernen CSS- und HTML-Features. Gebaut mit purem HTML5, CSS3 und minimalem JavaScript – nur dort wo es wirklich nötig ist.
 

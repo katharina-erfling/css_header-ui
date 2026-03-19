@@ -117,7 +117,6 @@ Font Awesome Icons sowie beide Webfonts (**Rounded Mplus 1c**, **PT Sans Caption
 - **CSS3** – Custom Properties, `clamp()`, Flexbox, `position: sticky`, `pointer-events`, Transitions, `prefers-reduced-motion`
 - **JavaScript** – minimal, nur Dropdown-Positionierung + Tooltip-Toggle per Klassenname
 - **Self-hosted** – Font Awesome, Rounded Mplus 1c, PT Sans Caption via `@font-face` mit `font-display: swap`
-- **Kein Framework**, kein CDN, kein npm
 
 ---
 
